@@ -17,6 +17,11 @@ class LivroController {
         return livroService.buscarTodos()
     }
 
+    @GetMapping("{id}")
+    fun getLivro(@PathVariable id: String): Livro {
+        return livroService.getLivro(id)
+    }
+
     @PostMapping
     fun add(@RequestBody livro:Livro): Livro {
         return livroService.salvar(livro)

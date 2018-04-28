@@ -27,4 +27,8 @@ class LivroService {
     fun excluir(id: String)  {
         livroRepository.deleteById(id)
     }
+
+    fun getLivro(id: String) : Livro {
+        return livroRepository.findById(id).get()
+    }
 }
